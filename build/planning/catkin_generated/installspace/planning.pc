@@ -1,0 +1,8 @@
+prefix=/home/erm/Projects/herm_me5400_ws/install
+
+Name: planning
+Description: Description of planning
+Version: 0.0.1
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lastar_planner -lrrtstar_planner
+Requires: roscpp pluginlib costmap_2d nav_core geometry_msgs amcl map_server move_base

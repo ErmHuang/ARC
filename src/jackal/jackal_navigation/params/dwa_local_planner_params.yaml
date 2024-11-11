@@ -1,0 +1,37 @@
+DWAPlannerROS:
+  # 速度限制参数
+  max_vel_x: 0.5                 # x方向上的最大前进速度（m/s）
+  min_vel_x: 0.1                 # x方向上的最小速度（m/s）
+  max_vel_y: 0.0                 # y方向上的最大速度，非全向机器人设为0
+  max_vel_theta: 1.0             # 最大角速度（rad/s）
+  min_vel_theta: -1.0            # 最小角速度
+  acc_lim_x: 2.5                 # x方向的加速度限制（m/s²）
+  acc_lim_y: 0.0                 # y方向的加速度限制，非全向机器人设为0
+  acc_lim_theta: 2.5             # 角加速度限制（rad/s²）
+
+  # 目标容忍度参数
+  xy_goal_tolerance: 0.2         # 到达目标时允许的xy容忍度（米）
+  yaw_goal_tolerance: 0.1        # 到达目标时允许的角度容忍度（弧度）
+  latch_xy_goal_tolerance: false # 是否锁定 xy 目标容忍度
+
+  # 前向模拟参数
+  sim_time: 3.0                  # 轨迹仿真时间（秒），决定机器人前向模拟的时间长度
+  vx_samples: 10                  # 线速度采样点数
+  vy_samples: 1                  # y方向的采样数，非全向机器人设为1
+  vtheta_samples: 30             # 角速度采样数，采样数越多轨迹越平滑，但计算量也更大
+
+  # 轨迹评分参数
+  path_distance_bias: 32.0       # 路径距离权重，控制机器人在局部路径上的跟随性
+  goal_distance_bias: 24.0       # 目标距离权重，影响机器人靠近目标的速度
+  occdist_scale: 0.1            # 障碍物距离权重，决定避障的重要性
+  forward_point_distance: 0.325  # 向前看点的距离
+  stop_time_buffer: 0.2          # 停止时间缓冲
+  scaling_speed: 0.25            # 速度比例因子
+  max_scaling_factor: 0.2        # 最大速度比例因子
+
+  # 振荡预防参数
+  oscillation_reset_dist: 0.05   # 振荡重置距离，机器人需要移动的最小距离来重置振荡状态
+
+  # 其他配置
+  publish_traj_pc: true          # 是否发布轨迹点云，便于调试和可视化
+  prune_plan: true               # 是否修剪计划路径，删除机器人已通过的路径点

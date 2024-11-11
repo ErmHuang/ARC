@@ -1,0 +1,8 @@
+<launch>
+    <!-- 设置地图的配置文件 -->
+    <arg name="map" default="untitled" />
+    <arg name="file_name" default="slam_map" />
+    <arg name="map_file" value="$(find gazebo_env)/worlds/$(arg map)/map/$(arg file_name)" />
+    <!-- 运行地图服务器，并且保存地图-->
+    <node name="map_save" pkg="map_server" type="map_saver" args="-f $(arg map_file)" />
+</launch>

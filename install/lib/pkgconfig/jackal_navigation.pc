@@ -1,0 +1,8 @@
+prefix=/home/erm/Projects/herm_me5400_ws/install
+
+Name: jackal_navigation
+Description: Description of jackal_navigation
+Version: 0.8.8
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

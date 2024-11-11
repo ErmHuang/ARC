@@ -1,0 +1,11 @@
+<library path="lib/libastar_planner">
+  <class name="planning/AStarPlanner" type="planning::AStarPlanner" base_class_type="nav_core::BaseGlobalPlanner">
+    <description>AStar Global Planner for Navigation</description>
+  </class>
+</library>
+
+<library path="lib/librrtstar_planner">
+  <class name="planning/RRTStarPlanner" type="planning::RRTStarPlanner" base_class_type="nav_core::BaseGlobalPlanner">
+    <description>RRTStar Global Planner for Navigation</description>
+  </class>
+</library>

@@ -1,0 +1,8 @@
+prefix=/home/erm/Projects/herm_me5400_ws/devel
+
+Name: gazebo_env
+Description: Description of gazebo_env
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

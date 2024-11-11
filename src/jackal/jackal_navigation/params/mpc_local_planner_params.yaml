@@ -1,0 +1,38 @@
+MPCPlannerROS:
+  # 速度限制参数
+  max_vel_x: 0.5                    # 最大线速度（m/s）
+  min_vel_x: 0.1                    # 最小线速度（m/s）
+  max_vel_theta: 1.0                # 最大角速度（rad/s）
+  min_vel_theta: -1.0               # 最小角速度
+  max_vel_x_backwards: 0.2          # 最大倒退速度（m/s）
+
+  # 加速度限制参数
+  acc_lim_x: 0.5                    # x 方向的加速度限制（m/s²）
+  acc_lim_theta: 0.5                # 角加速度限制（rad/s²）
+
+  # 目标容忍度
+  xy_goal_tolerance: 0.1            # 目标点的 xy 容忍度（米）
+  yaw_goal_tolerance: 0.1           # 目标点的角度容忍度（弧度）
+
+  # 模型预测控制（MPC）参数
+  dt_ref: 0.1                       # 参考时间步长（秒）
+  dt_hysteresis: 0.02               # 控制抖动阈值
+  n_horizon: 10                     # MPC的预测范围，即预测的步数
+  weight_velocity: 1.0              # 速度优化的权重
+  weight_obstacle: 50.0             # 避障权重
+  weight_goal: 1.0                  # 目标点权重
+  weight_kinematics_nh: 1000.0      # 非全向机器人的运动学约束权重
+
+  # 障碍物参数
+  min_obstacle_dist: 0.3            # 障碍物的最小距离（米）
+  obstacle_cost_mult: 1.0           # 障碍物代价的权重
+
+  # 路径跟踪
+  global_plan_viapoint_sep: 0.3     # 全局路径上相邻关键点的最小距离
+
+  # 控制频率和仿真
+  control_frequency: 10.0           # 控制频率（Hz）
+  predict_time: 2.0                 # 预测时间（秒）
+
+  # 可视化和调试
+  publish_feedback: true            # 是否发布反馈信息，便于调试

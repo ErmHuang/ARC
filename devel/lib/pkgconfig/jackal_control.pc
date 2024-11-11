@@ -1,0 +1,8 @@
+prefix=/home/erm/Projects/herm_me5400_ws/devel
+
+Name: jackal_control
+Description: Description of jackal_control
+Version: 0.8.8
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

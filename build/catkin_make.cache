@@ -1,0 +1,2 @@
+LeGO-LOAM/LeGO-LOAM:LeGO-LOAM/cloud_msgs:gazebo_env:jackal/jackal_control:jackal/jackal_description:jackal/jackal_navigation:planning:pointcloud_to_laserscan-lunar-devel
+-DCATKIN_DEVEL_PREFIX=/home/erm/Projects/herm_me5400_ws/devel -DCMAKE_INSTALL_PREFIX=/home/erm/Projects/herm_me5400_ws/install -G Unix Makefiles

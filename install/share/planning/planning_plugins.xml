@@ -1,0 +1,11 @@
+<library path="lib/liba_star_planner">
+    <class name="planning/AStarPlanner" type="planning::AStarPlanner" base_class_type="nav_core::BaseGlobalPlanner">
+        <description>A* Planner implementation for the global planner interface.</description>
+    </class>
+</library>
+
+<library path="lib/librrt_planner">
+    <class name="planning/RRTPlanner" type="planning::RRTPlanner" base_class_type="nav_core::BaseGlobalPlanner">
+        <description>RRT Planner implementation for the global planner interface.</description>
+    </class>
+</library>

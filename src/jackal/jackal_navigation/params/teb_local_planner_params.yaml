@@ -1,0 +1,52 @@
+TebLocalPlannerROS:
+  # 机器人最大速度和加速度参数
+  max_vel_x: 0.5                 # 机器人在 x 方向上的最大速度（m/s）
+  max_vel_x_backwards: 0.25       # 机器人在 x 方向上的最大倒退速度（m/s）
+  max_vel_y: 0.0                 # 对于非全向机器人，y 方向速度设为 0
+  max_vel_theta: 1.0             # 最大角速度（rad/s）
+  acc_lim_x: 0.5                 # x 方向上的加速度限制（m/s²）
+  acc_lim_theta: 0.5             # 角加速度限制（rad/s²）
+
+  # 目标容忍度参数
+  xy_goal_tolerance: 0.1         # 目标位置的 xy 容忍度（米）
+  yaw_goal_tolerance: 0.1        # 目标方向的角度容忍度（弧度）
+  free_goal_vel: false           # 如果为 true，则允许机器人在接近目标时继续移动
+
+  # 障碍物参数
+  min_obstacle_dist: 0.3        # 障碍物最小距离（米），机器人保持此距离以上
+  inflation_dist: 0.3            # 障碍物的膨胀距离
+  obstacle_poses_affected: 30    # 影响规划的障碍物数量上限
+  costmap_obstacles_behind_robot_dist: 0.75  # 考虑机器人后方的障碍物距离
+  max_obstacle_distance: 3.0     # 障碍物的最大距离
+  obstacle_range: 3.0               # 设置障碍物的检测范围
+  obstacle_avoidance: true          # 启用障碍物回避
+
+  # 优化参数
+  weight_optimaltime: 1.0        # 时间优化的权重
+  weight_obstacle: 300.0          # 避障权重
+  weight_viapoint: 0.1           # 路径上中间点的权重
+  weight_velocity: 0.5           # 速度优化的权重
+  weight_acc_lim_x: 1.0          # x 方向加速度限制的权重
+  weight_acc_lim_theta: 1.0      # 角加速度限制的权重
+
+  # 时间弹性带参数
+  teb_autosize: true             # 自动调整 TEB 的分辨率
+  dt_ref: 0.15                    # 参考时间步长
+  dt_hysteresis: 0.1             # 用于在最小和最大时间步长之间进行抖动的阈值
+  min_samples: 3                 # TEB 时间弹性带的最小采样数
+  max_samples: 10                # TEB 时间弹性带的最大采样数
+
+  # 轨迹优化
+  no_inner_iterations: 5         # 每个优化周期的内部迭代次数
+  no_outer_iterations: 4         # 每个优化周期的外部迭代次数
+
+  # 全局规划跟随参数
+  global_plan_overwrite_orientation: false  # 强制局部规划跟随全局规划的方向
+  global_plan_viapoint_sep: 0.2            # 全局路径上相邻关键点的最小距离
+
+  # 调试和可视化
+  publish_feedback: true                  # 是否发布反馈信息，方便调试
+  visualize_horizon: true                 # 可视化未来路径
+  footprint_model: # 配置机器人足迹的模型
+    type: "circular"                      # 机器人足迹类型
+    radius: 0.25                           # 圆形足迹的半径
